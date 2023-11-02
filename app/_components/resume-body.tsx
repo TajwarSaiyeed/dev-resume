@@ -3,10 +3,12 @@ import ResumeHeader from "@/app/_components/resume-header";
 import {Separator} from "@/components/ui/separator";
 import Language from "@/app/_components/language";
 import Education from "@/app/_components/education";
+import Skills from "@/app/_components/skills";
+import {skills} from "@/lib/mockData";
 
 const ResumeBody = () => {
     return (
-        <div className={'border rounded-lg h-screen p-8 my-5'}>
+        <div className={'h-screen p-8 my-5 print:p-0 print:px-8 print:my-0'}>
             <ResumeHeader
                 name={'Tajwar Saiyeed Abid'}
                 role={'Full Stack Developer'}
@@ -18,7 +20,7 @@ const ResumeBody = () => {
                 portfolio={"https://portfolio-tsa.vercel.app/home"}
             />
             {/*<Experience />*/}
-            {/*<Skills />*/}
+            <Skills skillData={skills} />
             {/*<Projects />*/}
             <Education
                 data={[

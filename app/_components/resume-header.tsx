@@ -17,7 +17,7 @@ const ResumeHeader: React.FC<ResumeHeaderProps> = ({
                       }) => {
     return (
         <div>
-            <h1 className={'uppercase text-4xl font-semibold print:hidden'}>{name}</h1>
+            <h1 className={'uppercase text-4xl font-semibold'}>{name}</h1>
             <p className={'font-bold my-2'}>
                 {role}
             </p>

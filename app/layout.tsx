@@ -16,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{
-        padding: 10
-      }}>
+      <body className={`${inter.className} p-5 print:p-0`}>
       {children}
       </body>
     </html>

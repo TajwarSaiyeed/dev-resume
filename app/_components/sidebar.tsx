@@ -6,8 +6,7 @@ const Sidebar = () => {
     return (
         <Sheet>
             <SheetTrigger>
-                <Button>
-
+                <Button className={'print:hidden'}>
                     Edit Resume
                 </Button>
             </SheetTrigger>
