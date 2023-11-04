@@ -1,5 +1,6 @@
 import React from 'react';
 import {Separator} from "@/components/ui/separator";
+import {Title} from "@/components/title";
 
 type EducationProps = {
     data: {
@@ -10,11 +11,10 @@ type EducationProps = {
     }[]
 }
 
-const Education = ({data} : EducationProps) => {
+const Education = ({data}: EducationProps) => {
     return (
         <div>
-            <h2 className={'text-2xl font-semibold mt-2'}>Education:</h2>
-            <Separator className={'my-2'}/>
+            <Title title={"Education"}/>
             <div className={'flex items-start flex-col justify-start gap-2'}>
                 {data.map((item) => (
                     <div key={item.id}>

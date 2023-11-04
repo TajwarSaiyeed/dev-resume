@@ -1,14 +1,16 @@
 import React from 'react';
 import ResumeHeader from "@/app/_components/resume-header";
-import {Separator} from "@/components/ui/separator";
 import Language from "@/app/_components/language";
 import Education from "@/app/_components/education";
 import Skills from "@/app/_components/skills";
-import {skills} from "@/lib/mockData";
+import {experiences, projects, skills} from "@/lib/mockData";
+import Experience from "@/app/_components/experience";
+import Projects from "@/app/_components/projects";
 
 const ResumeBody = () => {
+
     return (
-        <div className={'h-screen p-8 my-5 print:p-0 print:px-8 print:my-0'}>
+        <div className={'p-8 my-5 print:p-0 print:px-8 print:my-0'}>
             <ResumeHeader
                 name={'Tajwar Saiyeed Abid'}
                 role={'Full Stack Developer'}
@@ -19,9 +21,9 @@ const ResumeBody = () => {
                 linkedin={"https://www.linkedin.com/in/tajwarsaiyeedabid"}
                 portfolio={"https://portfolio-tsa.vercel.app/home"}
             />
-            {/*<Experience />*/}
+            <Experience exprData={experiences} />
             <Skills skillData={skills} />
-            {/*<Projects />*/}
+            <Projects projectData={projects} />
             <Education
                 data={[
                     {

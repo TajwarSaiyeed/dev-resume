@@ -1,14 +1,14 @@
 import React from 'react';
 import {Skill} from "@/lib/mockData";
 import {Separator} from "@/components/ui/separator";
+import {Title} from "@/components/title";
 
 const Skills = ({skillData}: {
     skillData: Skill[]
 }) => {
     return (
         <div>
-            <h2 className={'text-2xl font-semibold mt-2'}>Skills:</h2>
-            <Separator className={'my-2'}/>
+            <Title title={"Skills"}/>
             <ul className={'list-disc px-10'}>
                 {skillData.map(skill => (
                     <li key={skill.id}>
