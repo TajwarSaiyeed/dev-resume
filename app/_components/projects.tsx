@@ -8,7 +8,7 @@ const Projects = ({projectData}: {
     return (
         <div className={'w-full'}>
             <Title title={"Projects"}/>
-            <div className={'w-full'}>
+            <div className={'w-full flex flex-col gap-2'}>
                 {projectData.map(project => <div className={'flex flex-col gap-1'} key={project.id}>
                     <div className={'flex gap-2 items-center'}>
                         <span className={'font-bold'}>{project.name} - </span>

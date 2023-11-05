@@ -71,6 +71,27 @@ export const projects: Project[] = [
         github: "https://github.com/TajwarSaiyeed/gym-management-system",
         description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
         technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
-    }
+    },{
+        id: 2,
+        name: "Learning Management System",
+        live: "https://gym-management-system-abid.vercel.app/about-the-app",
+        github: "https://github.com/TajwarSaiyeed/gym-management-system",
+        description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+        technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+    },{
+        id: 3,
+        name: "School Management System",
+        live: "https://gym-management-system-abid.vercel.app/about-the-app",
+        github: "https://github.com/TajwarSaiyeed/gym-management-system",
+        description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+        technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+    },{
+        id: 4,
+        name: "Unsplash Photo Gallery",
+        live: "https://gym-management-system-abid.vercel.app/about-the-app",
+        github: "https://github.com/TajwarSaiyeed/gym-management-system",
+        description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+        technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+    },
 ]
 

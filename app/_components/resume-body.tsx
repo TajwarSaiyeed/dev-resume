@@ -10,7 +10,7 @@ import Projects from "@/app/_components/projects";
 const ResumeBody = () => {
 
     return (
-        <div className={'p-8 my-5 print:p-0 print:px-8 print:my-0'}>
+        <div className={'p-8 my-5 print:p-0 print:px-8 print:mb-0'}>
             <ResumeHeader
                 name={'Tajwar Saiyeed Abid'}
                 role={'Full Stack Developer'}
