@@ -1,17 +1,8 @@
 import React from 'react';
+import {HeaderProps} from "@/types";
 
-type ResumeHeaderProps = {
-    name: string
-    role: string
-    location: string
-    phone: string
-    email: string
-    portfolio: string
-    linkedin: string
-    github: string
-}
 
-const ResumeHeader: React.FC<ResumeHeaderProps> = ({
+const ResumeHeader: React.FC<HeaderProps> = ({
                           name,
                           role, location, phone, email, portfolio, linkedin, github
                       }) => {

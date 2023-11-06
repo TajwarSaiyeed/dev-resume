@@ -1,16 +1,9 @@
-import React, {Dispatch, DispatchWithoutAction} from 'react';
-import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
+import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
 import EditHeaderSection from "@/app/_components/edit/edit-header-section";
-import {HeaderProps} from "@/types";
 
-type SidebarProps = {
-    header: HeaderProps
-    dispatch: Dispatch<any>
-}
+const Sidebar = () => {
 
-const Sidebar = ({header, dispatch} : SidebarProps ) => {
+
     return (
         <Sheet>
             <SheetTrigger
@@ -18,19 +11,15 @@ const Sidebar = ({header, dispatch} : SidebarProps ) => {
                 type={'button'}>
                 Edit Resume
             </SheetTrigger>
-            <SheetContent className="w-[600px]" side={"left"}>
+            <SheetContent className="w-[600px] overflow-y-scroll" side={"left"}>
                 <SheetHeader>
                     <SheetTitle>Edit resume</SheetTitle>
                 </SheetHeader>
-                {/*edit header section
-github
-linkedin
-portfolio
+                {/*
+                    EditHeaderSection is a component that is used in the sidebar.
+                    It is also used in the main resume body.
                 */}
-                <EditHeaderSection
-                    headerData={header}
-                    dispatch={dispatch}
-                />
+                <EditHeaderSection/>
 
             </SheetContent>
         </Sheet>

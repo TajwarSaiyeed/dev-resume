@@ -6,20 +6,15 @@ import Skills from "@/app/_components/skills";
 import {experiences, projects, skills} from "@/lib/mockData";
 import Experience from "@/app/_components/experience";
 import Projects from "@/app/_components/projects";
+import {useResume} from "@/providers/resume-provider";
 
 const ResumeBody = () => {
+    const {state} = useResume()
 
     return (
         <div className={'p-8 my-5 print:p-0 print:px-8 print:mb-0'}>
             <ResumeHeader
-                name={'Tajwar Saiyeed Abid'}
-                role={'Full Stack Developer'}
-                location={'Chittagong, Bangladesh'}
-                phone={'(+88) 01853-600515'}
-                email={"tajwarsaiyeed15@gmail.com"}
-                github={"https://github.com/TajwarSaiyeed"}
-                linkedin={"https://www.linkedin.com/in/tajwarsaiyeedabid"}
-                portfolio={"https://portfolio-tsa.vercel.app/home"}
+                {...state.header}
             />
             <Experience exprData={experiences} />
             <Skills skillData={skills} />
