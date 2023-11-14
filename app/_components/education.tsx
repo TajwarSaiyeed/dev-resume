@@ -1,17 +1,14 @@
 import React from 'react';
-import {Separator} from "@/components/ui/separator";
 import {Title} from "@/components/title";
+import {useResume} from "@/providers/resume-provider";
+import {EducationProps} from "@/types";
 
-type EducationProps = {
-    data: {
-        id: number
-        institute: string
-        degree: string
-        academic_year: string
-    }[]
-}
 
-const Education = ({data}: EducationProps) => {
+const Education = () => {
+    const {state} = useResume()
+
+    const data: EducationProps[] = state?.education
+
     return (
         <div>
             <Title title={"Education"}/>

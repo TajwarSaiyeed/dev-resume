@@ -1,7 +1,7 @@
 "use client";
 
 import {createContext, useContext,  useReducer, Dispatch} from "react";
-import {HeaderProps} from "@/types";
+import {EducationProps, HeaderProps, LanguageProps} from "@/types";
 
 const ResumeContext = createContext({
     state: {} as any,
@@ -15,7 +15,9 @@ export const ResumeProvider = ({ children } : {
 }) => {
 
     const initialState: {
-        header: HeaderProps
+        header: HeaderProps,
+        education: EducationProps[],
+        languages: LanguageProps[]
     } = {
         header: {
             name: "Tajwar Saiyeed Abid",
@@ -26,7 +28,27 @@ export const ResumeProvider = ({ children } : {
             github: "https://github.com/tajwarsaiyeed/",
             linkedin: "https://www.linkedin.com/in/tajwarsaiyeedabid",
             portfolio: "https://portfolio-tsa.vercel.app/home"
-        }
+        },
+        education:[
+            {
+                id: 1,
+                institute: "National University",
+                degree: "Bachelor of English",
+                academic_year: "2021-running"
+            },{
+                id: 2,
+                institute: "Gachhbaria Govt. College",
+                degree: "Intermediate of Science",
+                academic_year: "2019-2021"
+            }
+        ],
+        languages: [
+            {
+                id: 1,
+                name: 'English',
+                level: 'Fluent'
+            }
+        ]
 
     }
 
@@ -36,6 +58,16 @@ export const ResumeProvider = ({ children } : {
                 return {
                     ...state,
                     header: action.payload
+                }
+            case "SET_EDUCATION":
+                return {
+                    ...state,
+                    education: action.payload
+                }
+            case "SET_LANGUAGE":
+                return {
+                    ...state,
+                    languages: action.payload
                 }
             default:
                 return state

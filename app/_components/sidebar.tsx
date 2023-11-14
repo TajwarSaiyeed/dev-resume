@@ -1,5 +1,8 @@
 import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
 import EditHeaderSection from "@/app/_components/edit/edit-header-section";
+import EditExperienceSection from "@/app/_components/edit/edit-experience-section";
+import EditLanguageSection from "@/app/_components/edit/edit-language-section";
+import EditEducationSection from "@/app/_components/edit/edit-eduction-section";
 
 const Sidebar = () => {
 
@@ -19,8 +22,16 @@ const Sidebar = () => {
                     EditHeaderSection is a component that is used in the sidebar.
                     It is also used in the main resume body.
                 */}
+
+
                 <EditHeaderSection/>
 
+                {/*edit experience section*/}
+                <EditExperienceSection/>
+                {/*edit education section*/}
+                <EditEducationSection />
+                {/*edit language section*/}
+                <EditLanguageSection />
             </SheetContent>
         </Sheet>
     );

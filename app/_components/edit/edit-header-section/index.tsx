@@ -1,5 +1,7 @@
 import {Input} from "@/components/ui/input";
 import {useResume} from "@/providers/resume-provider";
+import {Title} from "@/components/title";
+import React from "react";
 
 const EditHeaderSection = () => {
 
@@ -7,6 +9,11 @@ const EditHeaderSection = () => {
 
     return (
         <div className={'border p-3 rounded-md flex flex-wrap justify-between gap-2 my-3'}>
+            <div className={`
+                text-lg font-semibold leading-none tracking-tight my-2 w-full text-gray-700
+            `}>
+                Edit Header
+            </div>
             <div className={"font-medium flex flex-col items-start text-sm gap-2 w-full"}>
                 Enter Name
                 <Input
@@ -20,7 +27,7 @@ const EditHeaderSection = () => {
                             ...state.header,
                             name: e.target.value
                         }
-                    }) }
+                    })}
                 />
             </div>
             <div className={"font-medium flex flex-col items-start text-sm gap-2 w-full"}>
@@ -36,7 +43,7 @@ const EditHeaderSection = () => {
                             ...state.header,
                             role: e.target.value
                         }
-                    }) }
+                    })}
                 />
             </div>
             <div className={"font-medium flex flex-col items-start text-sm gap-2 w-full"}>
@@ -118,8 +125,9 @@ const EditHeaderSection = () => {
                         }
                     })}
                 />
-            </div><div className={"font-medium flex flex-col items-start text-sm gap-2 w-full"}>
-            Portfolio
+            </div>
+            <div className={"font-medium flex flex-col items-start text-sm gap-2 w-full"}>
+                Portfolio
                 <Input
                     className={'w-full'}
                     name={'portfolio'}
@@ -134,7 +142,6 @@ const EditHeaderSection = () => {
                     })}
                 />
             </div>
-
         </div>
     );
 };
