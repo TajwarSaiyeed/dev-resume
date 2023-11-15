@@ -41,6 +41,78 @@ export type HeaderProps = {
     portfolio: string
 }
 
+
+export type ExperienceProps = {
+    /**
+     * auto-incremented number
+     */
+    id: number
+    /**
+     * name of the company
+     * @example Google
+     */
+    company: string
+    /**
+     * role of the person
+     * @example Software Engineer
+     */
+    role: string
+    /**
+     * location of the company
+     * @example New York, NY
+     */
+    location: string
+    /**
+     * start date of the job
+     * @example July 2020
+     */
+    startDate: string
+    /**
+     * end date of the job
+     * @example July 2021
+     */
+    endDate: string
+    /**
+     * description of the job
+     * @example
+     * - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+     */
+    description: string
+}
+
+
+export type Project = {
+    /**
+     * auto-incremented number
+     */
+    id: number
+    /**
+     * name of the project
+     * @example Gym Management System
+     */
+    name: string
+    /**
+     * live link of the project
+     * @example https://gym-management-system-abid.vercel.app/about-the-app
+     */
+    live: string
+    /**
+     * github link of the project
+     * @example https://github.com/TajwarSaiyeed/gym-management-system
+     */
+    github: string
+    /**
+     * description of the project
+     * @example The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators, trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.
+     */
+    description: string
+    /**
+     * technologies used in the project
+     * @example Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary
+     */
+    technologies: string
+}
+
 export type EducationProps = {
     /**
      * id of the education

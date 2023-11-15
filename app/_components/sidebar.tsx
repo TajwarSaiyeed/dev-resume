@@ -3,6 +3,7 @@ import EditHeaderSection from "@/app/_components/edit/edit-header-section";
 import EditExperienceSection from "@/app/_components/edit/edit-experience-section";
 import EditLanguageSection from "@/app/_components/edit/edit-language-section";
 import EditEducationSection from "@/app/_components/edit/edit-eduction-section";
+import EditProjectsSection from "@/app/_components/edit/edit-projects-section";
 
 const Sidebar = () => {
 
@@ -14,7 +15,7 @@ const Sidebar = () => {
                 type={'button'}>
                 Edit Resume
             </SheetTrigger>
-            <SheetContent className="w-[600px] overflow-y-scroll" side={"left"}>
+            <SheetContent className="w-[900px] overflow-y-scroll" side={"left"}>
                 <SheetHeader>
                     <SheetTitle>Edit resume</SheetTitle>
                 </SheetHeader>
@@ -28,6 +29,8 @@ const Sidebar = () => {
 
                 {/*edit experience section*/}
                 <EditExperienceSection/>
+                {/*edit projects section*/}
+                <EditProjectsSection />
                 {/*edit education section*/}
                 <EditEducationSection />
                 {/*edit language section*/}

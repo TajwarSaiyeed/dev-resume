@@ -24,6 +24,18 @@ const EditLanguageSection = () => {
         })
     }
     const handleRemoveLanguage = (id: number) => {
+        if (data.length === 1) {
+            return dispatch({
+                type: 'SET_LANGUAGE',
+                payload: [
+                    {
+                        id: 1,
+                        name: 'English',
+                        level: 'Fluent'
+                    }
+                ]
+            })
+        }
         dispatch({
             type: 'SET_LANGUAGE',
             payload: data.filter((item) => item.id !== id)
@@ -31,7 +43,7 @@ const EditLanguageSection = () => {
     }
 
     return (
-        <div className={'border p-3 rounded-md flex flex-wrap justify-between gap-2 my-3'}>
+        <div className={'border p-3 rounded-md flex flex-wrap justify-between gap-2 my-3 bg-emerald-200'}>
             <div className={`
                 text-lg font-semibold leading-none tracking-tight my-2 w-full text-gray-700
             `}>

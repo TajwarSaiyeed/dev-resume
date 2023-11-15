@@ -1,10 +1,12 @@
 import React from 'react';
 import {Title} from "@/components/title";
-import {Project} from "@/lib/mockData";
+import {useResume} from "@/providers/resume-provider";
+import {Project} from "@/types";
 
-const Projects = ({projectData}: {
-    projectData: Project[]
-}) => {
+const Projects = () => {
+    const {state} = useResume()
+    const projectData: Project[] = state.projects
+
     return (
         <div className={'w-full'}>
             <Title title={"Projects"}/>
@@ -18,7 +20,7 @@ const Projects = ({projectData}: {
                         <a target={'_blank'} className={'text-sm font-medium text-blue-500'}
                            href={project.github}>Github</a>
                     </div>
-                    <p className={'text-sm font-[500]'}>{
+                    <p className={'text-sm text-justify font-[500]'}>{
                         project.description
                     }</p>
                     <p className={'text-[14px] w-full font-semibold'}>

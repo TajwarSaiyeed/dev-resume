@@ -1,7 +1,7 @@
 "use client";
 
 import {createContext, useContext,  useReducer, Dispatch} from "react";
-import {EducationProps, HeaderProps, LanguageProps} from "@/types";
+import {EducationProps, ExperienceProps, HeaderProps, LanguageProps, Project} from "@/types";
 
 const ResumeContext = createContext({
     state: {} as any,
@@ -16,6 +16,8 @@ export const ResumeProvider = ({ children } : {
 
     const initialState: {
         header: HeaderProps,
+        experience: ExperienceProps[],
+        projects: Project[],
         education: EducationProps[],
         languages: LanguageProps[]
     } = {
@@ -29,6 +31,59 @@ export const ResumeProvider = ({ children } : {
             linkedin: "https://www.linkedin.com/in/tajwarsaiyeedabid",
             portfolio: "https://portfolio-tsa.vercel.app/home"
         },
+        experience: [
+            {
+                id: 1,
+                company: "Decrypton Private Limited",
+                role: "Full Stack Developer - Remote",
+                location: "Lucknow, India",
+                startDate: "Dec 2022",
+                endDate: "July 2023",
+                description: "Developed web application using Next.js, React.js and MongoDB. Implemented functionalities and REST APIs for the web application using Node.js and Express.js. Implemented authentication and authorization using JWT. Implemented payment gateway using Stripe.",
+
+            }, {
+                id: 2,
+                company: "Eduvanz Financing Private Limited",
+                role: "Full Stack Developer - Remote",
+                location: "Lucknow, India",
+                startDate: "Dec 2022",
+                endDate: "July 2023",
+                description: "Developed web application using Next.js, React.js and MongoDB. Implemented functionalities and REST APIs for the web application using Node.js and Express.js. Implemented authentication and authorization using JWT. Implemented payment gateway using Stripe." +
+                    "Developed web application using Next.js, React.js and MongoDB. Implemented functionalities and REST APIs for the web application using Node.js and Express.js. Implemented authentication and authorization using JWT. Implemented payment gateway using Stripe.",
+            },
+        ],
+        // skills
+        projects: [
+            {
+                id: 1,
+                name: "Gym Management System",
+                live: "https://gym-management-system-abid.vercel.app/about-the-app",
+                github: "https://github.com/TajwarSaiyeed/gym-management-system",
+                description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+                technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+            },{
+                id: 2,
+                name: "Learning Management System",
+                live: "https://gym-management-system-abid.vercel.app/about-the-app",
+                github: "https://github.com/TajwarSaiyeed/gym-management-system",
+                description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+                technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+            },{
+                id: 3,
+                name: "School Management System",
+                live: "https://gym-management-system-abid.vercel.app/about-the-app",
+                github: "https://github.com/TajwarSaiyeed/gym-management-system",
+                description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+                technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+            },{
+                id: 4,
+                name: "Unsplash Photo Gallery",
+                live: "https://gym-management-system-abid.vercel.app/about-the-app",
+                github: "https://github.com/TajwarSaiyeed/gym-management-system",
+                description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
+                technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
+            },
+        ],
         education:[
             {
                 id: 1,
@@ -58,6 +113,16 @@ export const ResumeProvider = ({ children } : {
                 return {
                     ...state,
                     header: action.payload
+                }
+            case "SET_EXPERIENCE":
+                return {
+                    ...state,
+                    experience: action.payload
+                }
+            case "SET_PROJECT":
+                return {
+                    ...state,
+                    projects: action.payload
                 }
             case "SET_EDUCATION":
                 return {

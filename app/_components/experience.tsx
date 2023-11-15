@@ -1,11 +1,11 @@
 import React from 'react';
-import {Separator} from "@/components/ui/separator";
-import {Experience, experiences} from "@/lib/mockData";
 import {Title} from "@/components/title";
+import {useResume} from "@/providers/resume-provider";
+import {ExperienceProps} from "@/types";
 
-const Experience = ({exprData} : {
-    exprData: Experience[]
-}) => {
+const Experience = () => {
+    const {state} = useResume()
+    const exprData: ExperienceProps[] = state.experience;
     return (
         <div>
             <Title title={"Experience"}/>
@@ -21,9 +21,9 @@ const Experience = ({exprData} : {
                             <p className={'italic text-[12px]'}>{ex.startDate} - {ex.endDate}</p>
                         </div>
                     </div>
-                        <p className={'text-justify font-medium text-sm'}>
-                            {ex.description}
-                        </p>
+                    <p className={'text-justify font-medium text-sm'}>
+                        {ex.description}
+                    </p>
 
                 </div>)}
             </div>
