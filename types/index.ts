@@ -80,6 +80,28 @@ export type ExperienceProps = {
     description: string
 }
 
+export type Skill = {
+    /**
+     * auto-incremented number
+     */
+    id: number
+    /**
+     * name of sections
+     * @example technologies, library, tools, frameworks
+     */
+    name: string;
+    /**
+     * value for the sections
+     * @example
+     * Language : JavaScript, TypeScript, Node.js
+     * Frameworks : Next.js, Express.js
+     * Libraries : React.js, DaisyUI, TansStack Query
+     */
+    value: string
+}
+
+
+
 
 export type Project = {
     /**

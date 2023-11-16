@@ -4,6 +4,7 @@ import EditExperienceSection from "@/app/_components/edit/edit-experience-sectio
 import EditLanguageSection from "@/app/_components/edit/edit-language-section";
 import EditEducationSection from "@/app/_components/edit/edit-eduction-section";
 import EditProjectsSection from "@/app/_components/edit/edit-projects-section";
+import EditSkillSection from "@/app/_components/edit/edit-skill-section";
 
 const Sidebar = () => {
 
@@ -29,6 +30,8 @@ const Sidebar = () => {
 
                 {/*edit experience section*/}
                 <EditExperienceSection/>
+                {/*edit skill section*/}
+                <EditSkillSection/>
                 {/*edit projects section*/}
                 <EditProjectsSection />
                 {/*edit education section*/}

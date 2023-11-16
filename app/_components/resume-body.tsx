@@ -2,7 +2,6 @@ import ResumeHeader from "@/app/_components/resume-header";
 import Language from "@/app/_components/language";
 import Education from "@/app/_components/education";
 import Skills from "@/app/_components/skills";
-import { skills} from "@/lib/mockData";
 import Experience from "@/app/_components/experience";
 import Projects from "@/app/_components/projects";
 import {useResume} from "@/providers/resume-provider";
@@ -16,7 +15,7 @@ const ResumeBody = () => {
                 {...state.header}
             />
             <Experience/>
-            <Skills skillData={skills} />
+            <Skills/>
             <Projects/>
             <Education/>
             <Language/>

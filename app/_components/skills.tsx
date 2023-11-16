@@ -1,11 +1,13 @@
 import React from 'react';
-import {Skill} from "@/lib/mockData";
-import {Separator} from "@/components/ui/separator";
 import {Title} from "@/components/title";
+import {useResume} from "@/providers/resume-provider";
+import {Skill} from "@/types";
 
-const Skills = ({skillData}: {
-    skillData: Skill[]
-}) => {
+const Skills = () => {
+
+    const {state} = useResume();
+    const skillData: Skill[] = state.skills;
+
     return (
         <div>
             <Title title={"Skills"}/>

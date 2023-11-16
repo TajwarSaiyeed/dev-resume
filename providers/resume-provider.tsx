@@ -1,7 +1,7 @@
 "use client";
 
-import {createContext, useContext,  useReducer, Dispatch} from "react";
-import {EducationProps, ExperienceProps, HeaderProps, LanguageProps, Project} from "@/types";
+import {createContext, useContext, useReducer, Dispatch} from "react";
+import {EducationProps, ExperienceProps, HeaderProps, LanguageProps, Project, Skill} from "@/types";
 
 const ResumeContext = createContext({
     state: {} as any,
@@ -10,13 +10,14 @@ const ResumeContext = createContext({
 
 export const useResume = () => useContext(ResumeContext);
 
-export const ResumeProvider = ({ children } : {
+export const ResumeProvider = ({children}: {
     children: React.ReactNode
 }) => {
 
     const initialState: {
         header: HeaderProps,
         experience: ExperienceProps[],
+        skills: Skill[],
         projects: Project[],
         education: EducationProps[],
         languages: LanguageProps[]
@@ -52,7 +53,23 @@ export const ResumeProvider = ({ children } : {
                     "Developed web application using Next.js, React.js and MongoDB. Implemented functionalities and REST APIs for the web application using Node.js and Express.js. Implemented authentication and authorization using JWT. Implemented payment gateway using Stripe.",
             },
         ],
-        // skills
+        skills: [
+            {
+                id: 1,
+                name: "Language",
+                value: "JavaScript, TypeScript, Node.js"
+            },
+            {
+                id: 2,
+                name: "Frameworks",
+                value: "Next.js, Express.js"
+            },
+            {
+                id: 3,
+                name: "Libraries",
+                value: "React.js, DaisyUI, TansStack Query"
+            }
+        ],
         projects: [
             {
                 id: 1,
@@ -61,21 +78,21 @@ export const ResumeProvider = ({ children } : {
                 github: "https://github.com/TajwarSaiyeed/gym-management-system",
                 description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
                 technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
-            },{
+            }, {
                 id: 2,
                 name: "Learning Management System",
                 live: "https://gym-management-system-abid.vercel.app/about-the-app",
                 github: "https://github.com/TajwarSaiyeed/gym-management-system",
                 description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
                 technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
-            },{
+            }, {
                 id: 3,
                 name: "School Management System",
                 live: "https://gym-management-system-abid.vercel.app/about-the-app",
                 github: "https://github.com/TajwarSaiyeed/gym-management-system",
                 description: "The Gym Management System is a web application designed to facilitate the management of a fitness center or gym. It provides various features for different user roles including administrators,  trainers, and students. Attendance, payment, and workout tracking are some of the features available to users. Stripe is used for payment processing.",
                 technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
-            },{
+            }, {
                 id: 4,
                 name: "Unsplash Photo Gallery",
                 live: "https://gym-management-system-abid.vercel.app/about-the-app",
@@ -84,13 +101,13 @@ export const ResumeProvider = ({ children } : {
                 technologies: "Next.js, TypeScript, Prisma ORM, React-hook-form, Zustand, Stripe, Next-auth, MongoDB, Material UI, Cloudinary"
             },
         ],
-        education:[
+        education: [
             {
                 id: 1,
                 institute: "National University",
                 degree: "Bachelor of English",
                 academic_year: "2021-running"
-            },{
+            }, {
                 id: 2,
                 institute: "Gachhbaria Govt. College",
                 degree: "Intermediate of Science",
@@ -119,6 +136,11 @@ export const ResumeProvider = ({ children } : {
                     ...state,
                     experience: action.payload
                 }
+            case "SET_SKILL":
+                return {
+                    ...state,
+                    skills: action.payload
+                }
             case "SET_PROJECT":
                 return {
                     ...state,
@@ -143,7 +165,6 @@ export const ResumeProvider = ({ children } : {
         state,
         dispatch
     ] = useReducer(reducer, initialState);
-
 
 
     return (
