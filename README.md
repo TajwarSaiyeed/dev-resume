@@ -1,7 +1,7 @@
 # Dev Resume Template
 
+![image](./img.png)
 ![image](./edit.png)
-![image](./sidebar.png)
 
 # Open Source Contributions
 
@@ -17,8 +17,6 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge"/>
     <img src="https://img.shields.io/badge/Open%20Source-Project-orange?style=for-the-badge"/>
 </p>
-
-
 
 <p>List of actively participating individulas in open source contributions</p>
 
@@ -40,7 +38,6 @@
         <img height="50" src="https://user-images.githubusercontent.com/46517096/166973395-19676cd8-f8ec-4abf-83ff-da8243505b82.png"/>
     </a>
 </p>
-
 
 ## Contributors 🍉
 
