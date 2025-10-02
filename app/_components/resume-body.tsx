@@ -4,24 +4,21 @@ import Education from "@/app/_components/education";
 import Skills from "@/app/_components/skills";
 import Experience from "@/app/_components/experience";
 import Projects from "@/app/_components/projects";
-import {useResume} from "@/providers/resume-provider";
+import { useResume } from "@/providers/resume-provider";
 
 const ResumeBody = () => {
-    const {state} = useResume()
+  const { state } = useResume();
 
-    return (
-        <div className={'p-8 mb-5 mt-2 print:p-0 print:px-4 print:mb-0'}>
-            <ResumeHeader
-                {...state.header}
-            />
-            <Experience/>
-            <Skills/>
-            <Projects/>
-            <Education/>
-            <Language/>
-        </div>
-
-    );
+  return (
+    <div className={"p-8 mb-5 mt-2 print:p-0 print:px-4 print:mb-0"}>
+      <ResumeHeader {...state.header} />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Education />
+      <Language />
+    </div>
+  );
 };
 
 export default ResumeBody;
