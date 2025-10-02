@@ -1,9 +1,9 @@
 import React, { Dispatch } from "react";
 import { useResume } from "@/providers/resume-provider";
-import { EducationProps, Project } from "@/types";
+import { Project } from "@/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { XCircle } from "lucide-react";
+import { X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -125,11 +125,10 @@ const EditProjectsSection = () => {
                 <Button
                   onClick={() => handleRemoveProject(pro.id)}
                   variant="destructive"
-                  className={"p-1"}
-                  size="icon"
-                  asChild
+                  size="sm"
+                  className="h-6 w-6 p-0 hover:bg-destructive/90"
                 >
-                  <XCircle className="h-6 w-6" />
+                  <X className="h-5 w-5" />
                 </Button>
               </CardTitle>
             </CardHeader>

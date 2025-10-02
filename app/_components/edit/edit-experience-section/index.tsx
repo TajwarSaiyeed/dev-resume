@@ -4,7 +4,7 @@ import { ExperienceProps } from "@/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { X, XCircle } from "lucide-react";
+import { X } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 
 type ExperienceItemProps = {
@@ -124,11 +124,10 @@ const EditExperienceSection = () => {
                 <Button
                   onClick={() => handleRemoveExperience(exp.id)}
                   variant="destructive"
-                  className={"p-1"}
-                  size="icon"
-                  asChild
+                  size="sm"
+                  className="h-6 w-6 p-0 hover:bg-destructive/90"
                 >
-                  <XCircle className="h-6 w-6" />
+                  <X className="h-5 w-5" />
                 </Button>
               </CardTitle>
             </CardHeader>

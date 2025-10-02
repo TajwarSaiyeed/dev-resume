@@ -4,7 +4,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
+import { X } from "lucide-react";
 import EditHeaderSection from "@/app/_components/edit/edit-header-section";
 import EditExperienceSection from "@/app/_components/edit/edit-experience-section";
 import EditLanguageSection from "@/app/_components/edit/edit-language-section";
@@ -24,7 +26,7 @@ const Sidebar = () => {
         Edit Resume
       </SheetTrigger>
       <SheetContent className="w-[900px] overflow-y-scroll" side={"left"}>
-        <SheetHeader>
+        <SheetHeader className="relative">
           <SheetTitle>Edit resume</SheetTitle>
         </SheetHeader>
         {/* EditHeaderSection is a component that is used in the sidebar. It is also used in the main resume body.*/}
