@@ -46,7 +46,6 @@ const PDFDownloadButton = ({
     } catch (error) {
       console.error("Download failed:", error);
 
-      // Show user-friendly error with fallback option
       const userChoice = window.confirm(
         "PDF generation failed due to browser compatibility issues. Would you like to use the browser's print function instead? (Click OK for print dialog, Cancel to abort)"
       );
