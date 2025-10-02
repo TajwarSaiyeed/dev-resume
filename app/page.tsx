@@ -8,6 +8,7 @@ import Sidebar from "@/app/_components/sidebar";
 import TemplateRenderer from "@/components/template-renderer";
 import AIGenerateModal from "@/components/ai-generate-modal";
 import TemplateSelectorModal from "@/components/template-selector-modal";
+import PDFDownloadButton from "@/components/pdf-download-button";
 
 export default function Home() {
   const [hasMounted, setHasMounted] = useState(false);
@@ -30,6 +31,11 @@ export default function Home() {
   return (
     <>
       <div className="print:hidden fixed top-4 right-4 z-40 flex gap-3">
+        <PDFDownloadButton
+          variant="outline"
+          size="lg"
+          className="bg-white hover:bg-gray-50 border-gray-300 shadow-lg hover:shadow-xl"
+        />
         <Button
           onClick={() => setIsTemplateModalOpen(true)}
           variant="outline"

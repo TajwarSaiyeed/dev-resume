@@ -9,18 +9,24 @@ const TemplateRenderer = () => {
   const { state } = useResume();
   const { template } = state;
 
-  switch (template) {
-    case "developer":
-      return <DeveloperTemplate />;
-    case "graphic-designer":
-      return <GraphicDesignerTemplate />;
-    case "digital-marketer":
-      return <DigitalMarketerTemplate />;
-    case "business-analyst":
-      return <BusinessAnalystTemplate />;
-    default:
-      return <DeveloperTemplate />;
-  }
+  return (
+    <div id="resume-content" className="bg-white">
+      {(() => {
+        switch (template) {
+          case "developer":
+            return <DeveloperTemplate />;
+          case "graphic-designer":
+            return <GraphicDesignerTemplate />;
+          case "digital-marketer":
+            return <DigitalMarketerTemplate />;
+          case "business-analyst":
+            return <BusinessAnalystTemplate />;
+          default:
+            return <DeveloperTemplate />;
+        }
+      })()}
+    </div>
+  );
 };
 
 export default TemplateRenderer;

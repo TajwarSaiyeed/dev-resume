@@ -120,3 +120,50 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* PDF Generation Optimizations */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  #resume-content {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl,
+  .shadow-md {
+    box-shadow: none !important;
+  }
+}
+
+/* PDF-specific utility classes */
+.pdf-optimize {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.pdf-page-break {
+  page-break-before: always;
+}
+
+.pdf-no-break {
+  page-break-inside: avoid;
+}

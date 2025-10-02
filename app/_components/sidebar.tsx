@@ -7,6 +7,8 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { X } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import PDFDownloadButton from "@/components/pdf-download-button";
 import EditHeaderSection from "@/app/_components/edit/edit-header-section";
 import EditExperienceSection from "@/app/_components/edit/edit-experience-section";
 import EditLanguageSection from "@/app/_components/edit/edit-language-section";
@@ -29,8 +31,20 @@ const Sidebar = () => {
         <SheetHeader className="relative">
           <SheetTitle>Edit resume</SheetTitle>
         </SheetHeader>
-        {/* EditHeaderSection is a component that is used in the sidebar. It is also used in the main resume body.*/}
 
+        {/* Quick Actions */}
+        <div className="my-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">
+            Quick Actions
+          </h3>
+          <div className="flex gap-2">
+            <PDFDownloadButton size="sm" className="flex-1" />
+          </div>
+        </div>
+
+        <Separator className="my-4" />
+
+        {/* EditHeaderSection is a component that is used in the sidebar. It is also used in the main resume body.*/}
         <EditHeaderSection />
 
         {/*edit experience section*/}
