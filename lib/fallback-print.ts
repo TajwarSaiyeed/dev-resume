@@ -1,6 +1,4 @@
-// Alternative PDF generation utility using browser's print functionality as fallback
 export const fallbackPrintToPDF = (): void => {
-  // Create a temporary style for print optimization
   const printStyle = document.createElement("style");
   printStyle.id = "fallback-print-style";
   printStyle.textContent = `
@@ -44,10 +42,8 @@ export const fallbackPrintToPDF = (): void => {
 
   document.head.appendChild(printStyle);
 
-  // Trigger browser print dialog
   window.print();
 
-  // Clean up after print
   setTimeout(() => {
     const styleElement = document.getElementById("fallback-print-style");
     if (styleElement) {

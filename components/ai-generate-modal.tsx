@@ -32,7 +32,6 @@ const AIGenerateModal = ({ isOpen, onClose }: AIGenerateModalProps) => {
       const result = await generateResume({ prompt });
 
       if (result.success && result.data) {
-        // Update the resume context with AI-generated data
         dispatch({ type: "SET_HEADER", payload: result.data.header });
         dispatch({ type: "SET_EXPERIENCE", payload: result.data.experience });
         dispatch({ type: "SET_SKILL", payload: result.data.skills });
@@ -40,7 +39,6 @@ const AIGenerateModal = ({ isOpen, onClose }: AIGenerateModalProps) => {
         dispatch({ type: "SET_EDUCATION", payload: result.data.education });
         dispatch({ type: "SET_LANGUAGE", payload: result.data.languages });
 
-        // Close modal after successful generation
         onClose();
         setPrompt("");
       } else {
@@ -90,7 +88,7 @@ const AIGenerateModal = ({ isOpen, onClose }: AIGenerateModalProps) => {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{
               duration: 0.3,
-              ease: [0.16, 1, 0.3, 1], // Custom easing for smooth animation
+              ease: [0.16, 1, 0.3, 1],
             }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             onClick={e => e.stopPropagation()}

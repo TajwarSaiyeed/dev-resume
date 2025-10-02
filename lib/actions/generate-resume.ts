@@ -10,7 +10,6 @@ import {
   LanguageProps,
 } from "@/types";
 
-// Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export interface GenerateResumeRequest {
@@ -156,20 +155,16 @@ export async function generateResume(
 
     const text = response.text();
 
-    // Clean the response to extract JSON
     let jsonText = text.trim();
 
-    // Remove markdown code blocks if present
     if (jsonText.startsWith("```json")) {
       jsonText = jsonText.replace(/```json\n?/, "").replace(/\n?```$/, "");
     } else if (jsonText.startsWith("```")) {
       jsonText = jsonText.replace(/```\n?/, "").replace(/\n?```$/, "");
     }
 
-    // Parse the JSON response
     const parsedData = JSON.parse(jsonText);
 
-    // Validate the structure
     if (
       !parsedData.header ||
       !parsedData.experience ||

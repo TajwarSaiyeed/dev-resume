@@ -20,21 +20,17 @@ export const downloadResumeAsPDF = async (
       format = "a4",
     } = options;
 
-    // Get the resume element
     const element = document.getElementById(elementId);
     if (!element) {
       throw new Error(`Element with id "${elementId}" not found`);
     }
 
-    // Show loading state
     const originalCursor = document.body.style.cursor;
     document.body.style.cursor = "wait";
 
-    // Temporarily remove print styles for better PDF generation
     const printStyles = document.querySelectorAll("style[data-pdf-ignore]");
     printStyles.forEach(style => style.remove());
 
-    // Convert oklch colors to compatible RGB values for html2canvas
     const colorMap = {
       "oklch(1 0 0)": "#ffffff",
       "oklch(0.141 0.005 285.823)": "#1f2937",
@@ -62,11 +58,9 @@ export const downloadResumeAsPDF = async (
       "oklch(0.645 0.246 16.439)": "#dc2626",
     };
 
-    // Add PDF-specific styles with color fixes
     const pdfStyle = document.createElement("style");
     pdfStyle.setAttribute("data-pdf-style", "true");
 
-    // Create CSS custom properties with RGB fallbacks
     const colorFallbacks = Object.entries(colorMap)
       .map(
         ([oklch, rgb]) =>
@@ -149,10 +143,8 @@ export const downloadResumeAsPDF = async (
     `;
     document.head.appendChild(pdfStyle);
 
-    // Wait for styles to apply
     await new Promise(resolve => setTimeout(resolve, 100));
 
-    // Generate canvas from HTML with optimized settings for color compatibility
     const canvas = await html2canvas(element, {
       scale: scale,
       useCORS: true,
@@ -163,19 +155,15 @@ export const downloadResumeAsPDF = async (
       scrollX: 0,
       scrollY: 0,
       ignoreElements: (element: HTMLElement) => {
-        // Ignore elements that might cause color parsing issues
         return element.classList?.contains("print:hidden") || false;
       },
       onclone: (clonedDoc: Document) => {
-        // Additional cleanup in the cloned document
         const clonedElement = clonedDoc.getElementById(elementId);
         if (clonedElement) {
-          // Force all text to be black for better PDF readability
           const allElements = clonedElement.querySelectorAll("*");
           allElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             if (htmlEl.style) {
-              // Remove any oklch colors and replace with RGB
               try {
                 const computedStyle = window.getComputedStyle(htmlEl);
                 if (
@@ -191,7 +179,6 @@ export const downloadResumeAsPDF = async (
                   htmlEl.style.backgroundColor = "#ffffff";
                 }
               } catch (e) {
-                // Ignore style computation errors
                 console.warn("Could not process element styles:", e);
               }
             }
@@ -200,12 +187,10 @@ export const downloadResumeAsPDF = async (
       },
     });
 
-    // Calculate PDF dimensions
-    const imgWidth = format === "a4" ? 210 : 216; // A4: 210mm, Letter: 216mm
-    const pageHeight = format === "a4" ? 297 : 279; // A4: 297mm, Letter: 279mm
+    const imgWidth = format === "a4" ? 210 : 216;
+    const pageHeight = format === "a4" ? 297 : 279;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    // Create PDF
     const pdf = new jsPDF({
       orientation: imgHeight > pageHeight ? "portrait" : "portrait",
       unit: "mm",
@@ -216,11 +201,9 @@ export const downloadResumeAsPDF = async (
     let position = 0;
     const pageData = canvas.toDataURL("image/jpeg", quality);
 
-    // Add first page
     pdf.addImage(pageData, "JPEG", 0, position, imgWidth, imgHeight);
     heightLeft -= pageHeight;
 
-    // Add additional pages if content is too long
     while (heightLeft >= 0) {
       position = heightLeft - imgHeight;
       pdf.addPage();
@@ -228,11 +211,9 @@ export const downloadResumeAsPDF = async (
       heightLeft -= pageHeight;
     }
 
-    // Clean up styles
     document.head.removeChild(pdfStyle);
     document.body.style.cursor = originalCursor;
 
-    // Download the PDF
     pdf.save(filename);
   } catch (error) {
     console.error("Error generating PDF:", error);
