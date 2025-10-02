@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Loader2, FileText, Check } from "lucide-react";
 import { useResume } from "@/providers/resume-provider";
 import { downloadResumeAsPDF, getOptimizedFilename } from "@/lib/pdf-download";
+import { fallbackPrintToPDF } from "@/lib/fallback-print";
 import { getTemplate } from "@/lib/templates";
 
 interface PDFDownloadButtonProps {
@@ -44,8 +45,24 @@ const PDFDownloadButton = ({
       setTimeout(() => setDownloadSuccess(false), 3000);
     } catch (error) {
       console.error("Download failed:", error);
-      // You could add a toast notification here
-      alert("Download failed. Please try again.");
+
+      // Show user-friendly error with fallback option
+      const userChoice = window.confirm(
+        "PDF generation failed due to browser compatibility issues. Would you like to use the browser's print function instead? (Click OK for print dialog, Cancel to abort)"
+      );
+
+      if (userChoice) {
+        try {
+          fallbackPrintToPDF();
+          setDownloadSuccess(true);
+          setTimeout(() => setDownloadSuccess(false), 3000);
+        } catch (printError) {
+          console.error("Print fallback also failed:", printError);
+          alert(
+            "Both PDF generation and print failed. Please try again or use a different browser."
+          );
+        }
+      }
     } finally {
       setIsDownloading(false);
     }

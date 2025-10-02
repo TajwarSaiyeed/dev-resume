@@ -45,6 +45,32 @@
 
 :root {
   --radius: 0.625rem;
+  /* Fallback RGB colors for html2canvas compatibility */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #374151;
+  --primary-foreground: #ffffff;
+  --secondary: #f9fafb;
+  --secondary-foreground: #374151;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent: #f9fafb;
+  --accent-foreground: #374151;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #9ca3af;
+  --chart-1: #f59e0b;
+  --chart-2: #3b82f6;
+  --chart-3: #6366f1;
+  --chart-4: #84cc16;
+  --chart-5: #eab308;
+
+  /* Modern oklch colors for supporting browsers */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

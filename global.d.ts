@@ -24,6 +24,8 @@ declare module "html2canvas" {
     height?: number;
     scrollX?: number;
     scrollY?: number;
+    ignoreElements?: (element: HTMLElement) => boolean;
+    onclone?: (clonedDoc: Document) => void;
   }
 
   function html2canvas(
