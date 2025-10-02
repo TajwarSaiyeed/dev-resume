@@ -12,12 +12,14 @@
     "format:fix": "prettier --write --ignore-unknown ."
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "caniuse-lite": "^1.0.30001746",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.22",
     "lucide-react": "^0.544.0",
     "next": "^15.5.4",
     "react": "^18.3.1",

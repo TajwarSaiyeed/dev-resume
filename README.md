@@ -1,7 +1,23 @@
-# Dev Resume Template
+# Dev Resume Template ✨ AI-Powered
 
 ![image](./img.png)
 ![image](./edit.png)
+
+## 🚀 New Feature: AI Resume Generation
+
+Generate professional resumes instantly using **Gemini 2.0 Flash AI**! Simply describe your ideal resume, and our AI will create a complete, professional resume with:
+
+- ✨ **Smart Content Generation** - Professional descriptions and achievements
+- 🎯 **Role-Specific Optimization** - Tailored content for your target position
+- 📊 **Structured Data** - Properly formatted sections and information
+- 🖨️ **Ready to Export** - Print or download immediately
+
+### Quick Setup for AI Features
+
+1. Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Copy `.env.example` to `.env.local`
+3. Add your API key: `GEMINI_API_KEY=your_key_here`
+4. Start generating resumes with AI!
 
 # Open Source Contributions
 
