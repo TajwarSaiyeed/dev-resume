@@ -1,16 +1,10 @@
 import React from "react";
-import { HeaderProps } from "@/types";
+import { useResume } from "@/providers/resume-provider";
 
-const ResumeHeader: React.FC<HeaderProps> = ({
-  name,
-  role,
-  location,
-  phone,
-  email,
-  portfolio,
-  linkedin,
-  github,
-}) => {
+const ResumeHeader = () => {
+  const { state } = useResume();
+  const { name, role, location, phone, email, portfolio, linkedin, github } =
+    state.header;
   return (
     <div>
       <h1 className={"uppercase text-4xl font-semibold"}>{name}</h1>

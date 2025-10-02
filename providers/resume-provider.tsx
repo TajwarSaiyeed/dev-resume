@@ -8,6 +8,7 @@ import {
   LanguageProps,
   Project,
   Skill,
+  TemplateType,
 } from "@/types";
 
 const ResumeContext = createContext({
@@ -25,6 +26,7 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
     projects: Project[];
     education: EducationProps[];
     languages: LanguageProps[];
+    template: TemplateType;
   } = {
     header: {
       name: "Tajwar Saiyeed Abid",
@@ -139,6 +141,7 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
         level: "Fluent",
       },
     ],
+    template: "developer" as TemplateType,
   };
 
   const reducer = (state: {}, action: any) => {
@@ -172,6 +175,11 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
         return {
           ...state,
           languages: action.payload,
+        };
+      case "SET_TEMPLATE":
+        return {
+          ...state,
+          template: action.payload,
         };
       default:
         return state;

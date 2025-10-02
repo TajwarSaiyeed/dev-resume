@@ -171,3 +171,28 @@ export type LanguageProps = {
    */
   level: string;
 };
+
+export type TemplateType =
+  | "developer"
+  | "graphic-designer"
+  | "digital-marketer"
+  | "business-analyst";
+
+export interface Template {
+  id: TemplateType;
+  name: string;
+  description: string;
+  color: string;
+  icon: string;
+  suitableFor: string[];
+}
+
+export interface ResumeData {
+  header: HeaderProps;
+  experience: ExperienceProps[];
+  skills: Skill[];
+  projects: Project[];
+  education: EducationProps[];
+  languages: LanguageProps[];
+  template: TemplateType;
+}
